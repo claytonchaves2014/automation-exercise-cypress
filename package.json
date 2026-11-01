@@ -1,0 +1,25 @@
+{
+  "name": "automation-exercise-cypress",
+  "version": "1.0.0",
+  "description": "Automation Exercise tests with Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --reporter cypress-mochawesome-reporter --reporter-options reportDir=cypress/reports,charts=true,embeddedScreenshots=true,inlineAssets=true,saveAllAttempts=false",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:report": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/merge.json && npx marge cypress/reports/merge.json -o cypress/reports"
+  },
+  "keywords": [
+    "cypress",
+    "automationexercise",
+    "e2e",
+    "qa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^13.5.1",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
