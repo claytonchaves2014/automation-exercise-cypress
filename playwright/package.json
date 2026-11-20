@@ -4,10 +4,11 @@
   "private": true,
   "description": "Testes automatizados de API e E2E com Playwright e Cucumber",
   "scripts": {
-    "test": "cucumber-js",
-    "test:api": "cucumber-js --tags @api --format html:reports/evidencias/01-api/relatorio.html --format json:reports/evidencias/01-api/relatorio.json",
-    "test:e2e": "cucumber-js --tags \"@e2e and not @mobile\" --format html:reports/evidencias/02-e2e/relatorio.html --format json:reports/evidencias/02-e2e/relatorio.json",
-    "test:mobile": "cucumber-js --tags @mobile --format html:reports/evidencias/05-mobile-opcional/relatorio.html --format json:reports/evidencias/05-mobile-opcional/relatorio.json",
+    "test": "cucumber-js && npm run sanitize:reports",
+    "test:api": "cucumber-js --tags @api --format html:reports/evidencias/01-api/relatorio.html --format json:reports/evidencias/01-api/relatorio.json && npm run sanitize:reports",
+    "test:e2e": "cucumber-js --tags \"@e2e and not @mobile\" --format html:reports/evidencias/02-e2e/relatorio.html --format json:reports/evidencias/02-e2e/relatorio.json && npm run sanitize:reports",
+    "test:mobile": "cucumber-js --tags @mobile --format html:reports/evidencias/05-mobile-opcional/relatorio.html --format json:reports/evidencias/05-mobile-opcional/relatorio.json && npm run sanitize:reports",
+    "sanitize:reports": "node scripts/sanitize-reports.js",
     "perf:mock": "node performance/mock-api.js",
     "perf:load": "k6 run performance/load.js",
     "perf:smoke": "k6 run -e VUS=5 -e DURATION=10s -e RAMP_DURATION=1s performance/load.js"

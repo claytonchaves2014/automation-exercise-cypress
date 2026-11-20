@@ -58,7 +58,7 @@ npm run test:e2e         # Somente E2E para computador
 npm run test:mobile      # E2E com emulação de dispositivo móvel
 ```
 
-O fluxo do GitHub Actions, definido em `../.github/workflows/playwright.yml`, executa os testes de API, E2E para computador e emulação móvel em tarefas separadas a cada envio de alterações e solicitação de integração. Cada tarefa publica os relatórios HTML e JSON como artefatos, inclusive quando ocorre uma falha. Os comandos `test:api`, `test:e2e` e `test:mobile` salvam relatórios específicos em `reports/evidencias/`; as capturas E2E também são anexadas aos relatórios e salvas em subpastas por categoria. O [relatório HTML padrão da última execução local](reports/cucumber-report.html) também fica salvo neste projeto.
+O fluxo do GitHub Actions, definido em `../.github/workflows/playwright.yml`, executa os testes de API, E2E para computador e emulação móvel em tarefas separadas a cada envio de alterações e solicitação de integração. Cada tarefa publica os relatórios HTML e JSON como artefatos, inclusive quando ocorre uma falha. Os comandos `test:api`, `test:e2e` e `test:mobile` salvam relatórios específicos em `reports/evidencias/`; as capturas E2E também são anexadas aos relatórios e salvas em subpastas por categoria. Os comandos sanitizam caracteres de formatação invisíveis no código embutido do relatório HTML para evitar alertas de Unicode no GitHub sem alterar sua exibição. O [relatório HTML padrão da última execução local](reports/cucumber-report.html) também fica salvo neste projeto.
 
 ## Configuração
 
