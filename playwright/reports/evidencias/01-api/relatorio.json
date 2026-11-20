@@ -1,0 +1,916 @@
+[
+  {
+    "description": "  Como pessoa responsável pela qualidade\n  Quero validar operações HTTP e respostas da API\n  Para identificar regressões em fluxos válidos e inválidos",
+    "elements": [
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;consultar-um-produto-existente-(get)",
+        "keyword": "Cenário",
+        "line": 11,
+        "name": "Consultar um produto existente (GET)",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12689200
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 139400
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 383574999
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 12,
+            "name": "envio uma requisição GET para \"/products/1\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:14"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1557299
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 13,
+            "name": "o status da resposta deve ser 200",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 510700
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 14,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 326799
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 15,
+            "name": "o campo \"id\" da resposta deve ser \"1\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 9405400
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;criar-um-produto-(post)",
+        "keyword": "Cenário",
+        "line": 17,
+        "name": "Criar um produto (POST)",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2047199
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 91399
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 216864899
+            },
+            "arguments": [
+              {
+                "content": "{\n  \"title\": \"Produto de teste Playwright\",\n  \"price\": 19.99\n}",
+                "line": 19
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 18,
+            "name": "envio uma requisição POST para \"/products/add\" com o JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:22"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 269199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 25,
+            "name": "o status da resposta deve ser 201",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 346800
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 26,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 286800
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 27,
+            "name": "o campo \"title\" da resposta deve ser \"Produto de teste Playwright\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1030199
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;atualizar-um-produto-(put)",
+        "keyword": "Cenário",
+        "line": 29,
+        "name": "Atualizar um produto (PUT)",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 888899
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 48600
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 777095900
+            },
+            "arguments": [
+              {
+                "content": "{\n  \"title\": \"Produto atualizado pelo Playwright\",\n  \"price\": 25.5\n}",
+                "line": 31
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 30,
+            "name": "envio uma requisição PUT para \"/products/1\" com o JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:22"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 202199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 37,
+            "name": "o status da resposta deve ser 200",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 135200
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 38,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 143000
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 39,
+            "name": "o campo \"title\" da resposta deve ser \"Produto atualizado pelo Playwright\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 577899
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;remover-um-produto-(delete)",
+        "keyword": "Cenário",
+        "line": 41,
+        "name": "Remover um produto (DELETE)",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 590999
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 40500
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 306083900
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 42,
+            "name": "envio uma requisição DELETE para \"/products/1\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:14"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 280500
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 43,
+            "name": "o status da resposta deve ser 200",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 180599
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 44,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 267100
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 45,
+            "name": "o campo \"isDeleted\" da resposta deve ser verdadeiro",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:69"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2226099
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;rejeitar-um-método-não-suportado-para-um-produto",
+        "keyword": "Cenário",
+        "line": 47,
+        "name": "Rejeitar um método não suportado para um produto",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2083900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 83799
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 823188300
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 48,
+            "name": "envio uma requisição POST para \"/products/1\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:14"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 217100
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 49,
+            "name": "o status da resposta deve ser 404",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 335100
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 50,
+            "name": "o Content-Type da resposta deve indicar HTML",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:54"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 365299
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 51,
+            "name": "o corpo da resposta deve conter \"Cannot POST /products/1\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:58"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1415199
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;rejeitar-um-corpo-json-malformado",
+        "keyword": "Cenário",
+        "line": 53,
+        "name": "Rejeitar um corpo JSON malformado",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1095299
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 45099
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 290718199
+            },
+            "arguments": [
+              {
+                "content": "{\"title\":",
+                "line": 55
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 54,
+            "name": "envio uma requisição POST para \"/products/add\" com JSON malformado",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 201199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 58,
+            "name": "o status da resposta deve ser 400",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 147800
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 59,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 302800
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 60,
+            "name": "a resposta deve conter uma mensagem de erro",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:76"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 919799
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;rejeitar-autenticação-sem-credenciais",
+        "keyword": "Cenário",
+        "line": 62,
+        "name": "Rejeitar autenticação sem credenciais",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 929900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 76600
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 291661600
+            },
+            "arguments": [
+              {
+                "content": "{}",
+                "line": 64
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 63,
+            "name": "envio uma requisição POST para \"/auth/login\" com o JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:22"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 221300
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 67,
+            "name": "o status da resposta deve ser 400",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 339399
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 68,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 154400
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 69,
+            "name": "a resposta deve conter uma mensagem de erro",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:76"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1741800
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;rejeitar-autenticação-com-credenciais-inválidas",
+        "keyword": "Cenário",
+        "line": 71,
+        "name": "Rejeitar autenticação com credenciais inválidas",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1763100
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 112300
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 271804000
+            },
+            "arguments": [
+              {
+                "content": "{\n  \"username\": \"invalid-user\",\n  \"password\": \"invalid-password\"\n}",
+                "line": 73
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 72,
+            "name": "envio uma requisição POST para \"/auth/login\" com o JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:22"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 290199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 79,
+            "name": "o status da resposta deve ser 400",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 164200
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 80,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 117000
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 81,
+            "name": "a resposta deve conter uma mensagem de erro",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:76"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 942500
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testes-de-contrato-da-api-de-produtos;retornar-erro-ao-consultar-um-produto-inexistente",
+        "keyword": "Cenário",
+        "line": 83,
+        "name": "Retornar erro ao consultar um produto inexistente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1199100
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 167800
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que a API de exemplo está disponível",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 215900700
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 84,
+            "name": "envio uma requisição GET para \"/products/999999\"",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:14"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 203100
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 85,
+            "name": "o status da resposta deve ser 404",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 253200
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 86,
+            "name": "o Content-Type da resposta deve indicar JSON",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:50"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 112000
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 87,
+            "name": "a resposta deve conter uma mensagem de erro",
+            "match": {
+              "location": "features\\step_definitions\\api.steps.js:76"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1212399
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "testes-de-contrato-da-api-de-produtos",
+    "line": 3,
+    "keyword": "Funcionalidade",
+    "name": "Testes de contrato da API de produtos",
+    "tags": [
+      {
+        "name": "@api",
+        "line": 2
+      }
+    ],
+    "uri": "features\\api.feature"
+  }
+]
