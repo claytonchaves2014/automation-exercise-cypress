@@ -5,9 +5,6 @@ Funcionalidade: Testes de contrato da API de produtos
   Quero validar operações HTTP e respostas da API
   Para identificar regressões em fluxos válidos e inválidos
 
-  Contexto:
-    Dado que a API de exemplo está disponível
-
   Cenário: Consultar um produto existente (GET)
     Quando envio uma requisição GET para "/products/1"
     Então o status da resposta deve ser 200

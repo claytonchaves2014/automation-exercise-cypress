@@ -1,3 +1,7 @@
 node_modules/
 test-results/
 playwright-report/
+/reports/cucumber-report.html
+/reports/cucumber-report.json
+/reports/relatorio-carga-k6.html
+/reports/relatorio-carga-k6.json

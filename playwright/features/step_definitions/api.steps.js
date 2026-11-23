@@ -1,7 +1,5 @@
-const { Given, When, Then } = require("@cucumber/cucumber");
+const { When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
-
-Given("que a API de exemplo está disponível", function () {});
 
 async function saveResponse(world, response) {
   world.response = response;

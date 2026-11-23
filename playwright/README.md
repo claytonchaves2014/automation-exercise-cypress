@@ -58,7 +58,7 @@ npm run test:e2e         # Somente E2E para computador
 npm run test:mobile      # E2E com emulação de dispositivo móvel
 ```
 
-O fluxo do GitHub Actions, definido em `../.github/workflows/playwright.yml`, executa os testes de API, E2E para computador e emulação móvel em tarefas separadas a cada envio de alterações e solicitação de integração. Cada tarefa publica os relatórios HTML e JSON como artefatos, inclusive quando ocorre uma falha. Os comandos `test:api`, `test:e2e` e `test:mobile` salvam relatórios específicos em `reports/evidencias/`; as capturas E2E também são anexadas aos relatórios e salvas em subpastas por categoria. Os comandos sanitizam caracteres de formatação invisíveis no código embutido do relatório HTML para evitar alertas de Unicode no GitHub sem alterar sua exibição. O [relatório HTML padrão da última execução local](reports/cucumber-report.html) também fica salvo neste projeto.
+O fluxo do GitHub Actions, definido em `../.github/workflows/playwright.yml`, executa os testes de API, E2E para computador e emulação móvel em tarefas separadas a cada envio de alterações e solicitação de integração. Cada tarefa publica os relatórios HTML e JSON como artefatos, inclusive quando ocorre uma falha. Os comandos `test:api`, `test:e2e` e `test:mobile` salvam relatórios específicos em `reports/evidencias/`; antes de cada execução, removem as capturas e os relatórios anteriores daquela suíte para evitar evidências desatualizadas. Os testes sanitizam caracteres de formatação invisíveis nos relatórios HTML mesmo quando a suíte falha. Relatórios de execução gerais e do teste de carga ficam locais e não são versionados; as evidências selecionadas permanecem em `reports/evidencias/`.
 
 ## Configuração
 
@@ -95,10 +95,10 @@ Para validar a instalação rapidamente antes do perfil completo:
 npm run perf:smoke
 ```
 
-O K6 salva `reports/relatorio-carga-k6.html` e `reports/relatorio-carga-k6.json`. O relatório apresenta requisições por segundo, latências, erros, verificações e os limites definidos: percentil 95 abaixo de 500 ms, taxa de falhas abaixo de 1% e verificações aprovadas acima de 99%. Esses limites são critérios iniciais para o mock local, não uma garantia de desempenho de produção.
+O K6 salva localmente `reports/relatorio-carga-k6.html` e `reports/relatorio-carga-k6.json`, que não são versionados. O relatório apresenta requisições por segundo, latências, erros, verificações e os limites definidos: percentil 95 abaixo de 500 ms, taxa de falhas abaixo de 1% e verificações aprovadas acima de 99%. Esses limites são critérios iniciais para o mock local, não uma garantia de desempenho de produção.
 
 ### Resultado e análise da execução
 
 Na execução local de 19/11/2026, o perfil manteve 500 usuários virtuais por 5 minutos e gerou 165.065 requisições, com média de 457,64 requisições por segundo. A latência média foi de 0,55 ms, o p95 foi de 1,52 ms e o máximo observado foi de 29,39 ms. Não houve falhas e as 495.195 verificações passaram. Os três limites foram atendidos.
 
-Como o alvo é um mock local simples, esses números medem apenas este computador e o endpoint em memória; não estimam o desempenho de uma API real com rede, banco de dados ou dependências externas. Os relatórios da execução estão disponíveis em [HTML](reports/relatorio-carga-k6.html) e [JSON](reports/relatorio-carga-k6.json).
+Como o alvo é um mock local simples, esses números medem apenas este computador e o endpoint em memória; não estimam o desempenho de uma API real com rede, banco de dados ou dependências externas. Uma evidência curta do teste smoke está disponível em [HTML](reports/evidencias/04-carga-opcional/relatorio-carga-k6.html) e [JSON](reports/evidencias/04-carga-opcional/relatorio-carga-k6.json).
